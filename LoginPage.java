@@ -22,7 +22,6 @@ class Login extends Frame{
         TextArea ta = new TextArea();
         Button btn = new Button("Submit");
         //adding in frame
-        //setTittle("Login");
         setSize(500,500);
         setLayout(null);
         setVisible(true);
