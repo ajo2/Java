@@ -53,18 +53,34 @@ class Login extends Frame{
         ta.setBounds(150,250,200,100);
         add(btn);
         btn.setBounds(225,400,100,50);
-        //action time
-        ActionListener submitlisteran = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println(tf1.getText());
-                System.err.println(tf2.getText());
-                System.out.println(ta.getText());
-                System.out.println(ch);
-                
-            }
-        };
+     
+        Buttonlistener submitlisteran = new Buttonlistener(tf1,tf2,ch,ta,btn);
         btn.addActionListener(submitlisteran);
+    }
+
+    class Buttonlistener implements ActionListener{
+        TextField tf1,tf2;
+        TextArea ta;
+        Choice ch;
+        Button btn;
+        Frame f = new Frame();
+        Color c = new Color(55,45,65);
+        Buttonlistener(TextField tf1, TextField tf2, Choice ch, TextArea ta, Button btn){
+            this.tf1 = tf1;
+            this.tf2 = tf2;
+            this.ch = ch;
+            this.ta = ta;
+            this.btn = btn;
+
+        }
+        public void actionPerformed(ActionEvent e){
+            System.out.println(tf1.getText());
+            System.err.println(tf2.getText());
+            System.out.println(ta.getText());
+            System.out.println(ch.getSelectedItem());
+            btn.setBackground(c);
+
+        }
     }
 
     public static void main(String args[]){
